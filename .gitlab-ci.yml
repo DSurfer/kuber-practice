@@ -2,7 +2,7 @@ build image:
   stage: build
   image: docker
   services:
-    docker:dind
+   - docker:dind
   script:
       - cd /src/app
       - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
