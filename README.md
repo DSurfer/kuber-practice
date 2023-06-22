@@ -5,8 +5,11 @@
 - Если не установлен kubectl, то установите его при развернутом кластере minikube командой `minikube kubectl -- get po -A`
 - Далее, для запуска приложения в рамках локальной сети, введите команды 
 `kubectl create deployment $название_приложения --image=registry.gitlab.com/dsurfer/hello-kuber` 
+
 `kubectl expose deployment $название_приложения --type=NodePort --port=3000`
+
 `kubectl port-forward service/hello-minikube 3000:3000`
+
 - Проверьте, запустилось ли ваше приложение, с помощью команды `kubectl get services $название_приложения`
 - Должно выглядеть примерно так ![](./services.png)
 - Для получения внешнего IP введите команду `minikube service $название_приложения`
